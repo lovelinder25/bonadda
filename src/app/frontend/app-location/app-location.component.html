@@ -1,0 +1,293 @@
+<style>
+    /*
+         .location_section{
+             background-image: url(img/main__bg.jpg);
+         }
+    */
+    .top_bar{
+    padding: 0px 0px;
+    display: none;
+}
+    .navbar__ {
+        display: none !important;
+    }
+
+    .top_bar {
+        display: none;
+    }
+
+    @media(max-width:767px) {
+
+        .index_heading h2 {
+            color: #e5cfb8 !important;
+            background: white !important;
+            display: inline-block;
+            padding: 10px 19px !important;
+            margin: 0;
+            border-radius: 6px;
+            width: 100%;
+            font-size: 26px !important;
+        }
+
+        .index_heading {
+            text-align: center;
+            width: 297px !important;
+            /* color: red; */
+            position: absolute;
+            top: 100px !important;
+            left: 50% !important;
+            z-index: 99999999;
+            transform: translate(-50%, 10px) !important;
+            padding: 0px;
+        }
+    }
+
+    .location_select {
+
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        place-content: center;
+        place-items: center;
+        position: relative;
+        flex-direction: column;
+    }
+
+
+    .location_select .resto_link {
+        background: white;
+        padding: 1px;
+        text-align: center;
+        min-width: 300px;
+        min-height: 300px;
+        display: flex;
+        place-content: center;
+        flex-direction: column;
+        place-items: center;
+    }
+
+    .location_select .resto_link h4 {
+        padding: 15px 0px;
+    }
+
+
+    .height-100vh-15 {
+        height: calc(100vh - 0px);
+        overflow: scroll;
+    }
+
+    .location_section {
+        background: rgb(241 210 117 / 68%);
+        padding: 0px 0px;
+    }
+
+    .np_desktop {
+        padding: 0px;
+    }
+
+
+    @media(max-width:768px) {
+
+        .index_heading {
+            position: relative !important;
+
+        }
+
+        /*
+             .index_heading {
+        display: none;
+    }
+    */
+        .location_select {
+            padding: 40px;
+        }
+
+        .height-100vh-15 {
+            height: auto;
+            overflow: hidden;
+        }
+
+    }
+
+    .index_heading {
+        text-align: center;
+        width: 100%;
+        /* color: red; */
+        position: absolute;
+        top: 20px;
+        left: 0;
+        z-index: 99999999;
+    }
+
+    .index_heading h2 {
+        color: white !important;
+    }
+
+    .index_heading h2 {
+        color: #e7cfbb !important;
+        background: white;
+        display: inline-block;
+        padding: 10px 19px;
+        margin: 0;
+        border-radius: 6px;
+    }
+
+    .heading h2 {
+        font-size: 37px;
+    }
+
+    @media(max-width:1440px) {
+        .heading h2 {
+            font-size: 40px;
+        }
+    }
+
+    @media(max-width:1280px) {
+        .heading h2 {
+            font-size: 20px;
+        }
+    }
+
+    .other_location {
+        min-width: 300px;
+        background: white;
+        margin-top: 20px;
+    }
+
+
+
+    .other_location a.drop_toggle {
+        text-align: center;
+        display: block;
+        background: #ffffff;
+        padding: 18px;
+        font-size: 18px;
+        color: black;
+        text-decoration: none;
+        border-bottom: 1px solid #dfdfdf;
+        display: flex;
+        place-content: space-between;
+        place-items: center;
+        width: 100%;
+        min-height: 70px;
+    }
+
+    .loaction_drop ul li a {
+        display: flex;
+        place-items: center;
+        place-content: space-between;
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+        border-bottom: 1px solid #d7d7d7;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+
+    .loaction_drop ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+
+
+    .drop_toggle.toggle i {
+        transform: rotate(45deg);
+        transition: .4s all ease;
+    }
+
+    .branch {
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .branch span:nth-child(1) {
+        font-weight: 600;
+    }
+
+    .branch span:nth-child(2) {
+        font-size: 13px;
+        color: #b0b992;
+        text-transform: capitalize;
+    }
+
+    .loaction_drop ul li a img {
+        background: white;
+        width: 120px;
+        height: 50px;
+        object-fit: scale-down;
+    }
+
+    .resto_logo img {
+        width: 140px;
+    }
+
+    .resto_logo {
+        margin-bottom: 10px;
+    }
+
+    .location_section {
+        /* background-image: url(./assets/Main-Background-Select-Your-Location-min.jpg); */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    select {
+        border: 2px solid #573676;
+        color: #000000;
+        padding: 10px 7px;
+        max-width: 239px;
+    }
+</style>
+<section class=" location_section height-100vh-15"
+    style="background-image: url(assets/Main-Background-Select-Your-Location-min.jpg);">
+
+    <div class="heading index_heading">
+        <h2> Select Your Location</h2>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-12 col-12 np_desktop">
+                <div class="location_select">
+                    <div class="resto_link">
+                        <div class="resto_logo">
+                            <img src="assets/logo.png" class="img-fluid">
+                        </div>
+                        <!--                            <h4>Amritsar</h4>-->
+
+                        <!-- <a routerLink="/Home" class="btn-outline">Visit Website </a> -->
+                        <!-- restID -->
+
+                        <select (change)="selectBranch($event)">
+                            <option>Select Branch</option>
+                            <option *ngFor="let r of restaurants" value="{{r.restID}}">Bon Gateau - {{r.city}}</option>
+                            <!-- <option value="okz15g4x_Mohali">Bon Gateau - Mohali</option>
+                            <option value="okz15g4x">Bon Gateau - Chandigarh</option>
+                            <option value="okz15g4x">Bon Gateau - Ludhiana</option> -->
+                        </select>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</section>

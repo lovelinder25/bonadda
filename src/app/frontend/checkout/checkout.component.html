@@ -1,0 +1,427 @@
+<div class="page_header" style="background-image: url(assets/slider_1.jpg)"></div>
+<style>
+a.btn-fill.address.disbale {
+    pointer-events: none;
+    background: rgb(87 54 118 / 66%);
+    border: 2px solid rgb(87 54 118 / 66%) !important;
+}
+.address-box {
+    background: white;
+    padding: 10px;
+    border: 1px dashed #573676;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    place-content: space-between;
+    place-items: self-start;
+}
+</style>
+<section class="checkout_page pt-70">
+    <div class="container">
+
+        <div class="row">
+            <!-- <div class="col-lg-8 col-12 col-md-12">
+                <div class="checkout-forms">
+                    <div id="accordion">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#collapseOne" aria-expanded="true">
+                                    Delivery Address <span><i class="las la-angle-down"></i> </span>
+                                </a>
+                            </div>
+                            <div id="collapseOne" class="collapse show" data-parent="#accordion" >
+                                <div class="card-body">
+                                    <div class="Old_address" id="old_address" *ngFor="let a of addressFind">
+                                        <div class="address-box" >
+                                            <h5>{{a.name}}</h5>
+                                            <p>
+                                                Mobile: 
+                                                {{a.phone}}<br>
+                                                {{a.address}}
+                                            </p>
+                                            <a href="javascript:void(0)" class="btn-fill address" (click)="setAddress(a)"  [class]="a.selected === true?'disbale':''">{{a.selected?'selected':'Deliver here'}}</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card">
+
+
+
+
+
+                            <div class="card-header">
+                                <button type="button" class="btn-fill " data-toggle="modal" data-target="#myModal">
+                                    Add Address
+                                </button>
+       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+
+            <div class="col-lg-8 col-12 col-md-12 mx-auto card">
+                <div id="alert-msg">
+
+                </div>
+
+                <form >
+                    
+                    <div class="checkout_total">
+                        <div class="your-order-area">
+                            <h3 class="d-flex justify-content-between mb-3">Your order   <span><i class="las la-map-marker-alt"></i> {{restaurants_city}}</span></h3>
+
+                          
+                            <div class="your-order-wrap gray-bg-4">
+                                <div class="your-order-info-wrap">
+                                    <div class="your-order-info">
+                                        <ul>
+                                            <li>Product <span>Total</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="your-order-middle">
+                                        <ul id="cart-product" *ngFor="let p of Cartorderinfo">
+                                          
+                                            <li>{{p.name}} X {{p.quantity}}<span> {{p.final_price | currency:'INR'}} </span></li>
+                                                <!-- <li *ngFor="let d of p.AddonItem.details">{{d.name}} X {{d.quantity}} <span> {{d.price | currency:'INR'}} </span></li> -->
+                                               
+                                             
+                                        
+                                       
+                                        </ul>
+                                    </div>
+                                    <div class="your-order-info order-subtotal">
+                                        <ul>
+                                            <li>Subtotal <span id="sub-total">{{subTotal | currency:'INR'}}</span></li>
+                                    <!-- <li *ngFor="let d of DiscountAmount">{{d.discountname}} <span id="sub-total">{{
+                                            d.discount | currency:'INR'}}</span></li> -->
+                                        </ul>
+                                    </div>
+
+<!--                                     
+                                    <div class="your-order-info order-total">
+                                        <ul>
+                                            
+                                            
+                                        </ul>
+                                   
+                                    </div> -->
+                                  
+                                    <!-- <div class="your-order-info order-subtotal"> -->
+                                        <!-- <ul> -->
+                                            <!-- <li *ngFor="let t of OrderTax">{{t.taxname}} <span id="sub-total">{{t.taxtype =='2'? '₹': '' }}{{t.tax}} {{t.taxtype =='1'? '%': '' }}</span> </li> -->
+                                            <!-- <li *ngFor="let t of OrderTax">{{t.taxname}} ({{t.tax}} {{t.taxtype =='1'? '%': '' }}) <span id="sub-total">{{GST_in_INR| currency:'INR'}}</span> </li> -->
+                                            <!-- <li>Discount Total<span id="gst">{{discounttotal | currency:'INR'}}</span></li> -->
+                                        <!-- </ul> -->
+                                    <!-- </div> -->
+                                    <div class="your-order-info order-subtotal">
+                                        <ul>
+                                    <!-- Taxes and Charges -->
+
+                                            <li>Delivery Charges <span id="deliver">{{delivery_charges | currency:'INR'}}</span></li>
+                                            <li>Total Tax <span id="deliver">{{Tax_Total | currency:'INR'}}</span></li>
+                                        </ul>
+                                    </div>
+                                    <div id="promocodes"></div>
+                                    <div class="your-order-info order-total">
+                                        <ul>
+                                            <input type="hidden" name="grand_ttl" id="grand_ttls" value="0">
+                                            <li>Grand Total <span id="grand_ttl">{{GrandTotal | currency:'INR'}}</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+<style>
+    .pay-top.sin-payment label  {
+    display: inline-flex;
+    place-content: start;
+    place-items: center;
+    width: 100%;
+    border: 1px solid #c7c7c7;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 0;
+}
+.pay-top.sin-payment label img{
+        margin-right: 10px;
+}
+.pay-top.sin-payment label input{
+    width: 30px;
+    height: 20px;
+}
+ .pay-top.sin-payment label input[type=radio] {
+            accent-color: rgb(87 54 118);
+        }
+</style>
+                            <div class="payment-method">
+
+                                <div class="pay-top sin-payment">
+                                    <label for="payment-method-3">
+                                    <img src="assets/cod.png">
+                                    <input id="payment-method-3" class="input-radio" type="radio" value="COD"
+                                        name="payment_method" (change)="enableCOD($event.target)" >
+                                    Cash on delivery </label>
+                                </div>
+                                <div class="pay-top sin-payment">
+                                    <label for="payment-method-2">
+                                    <img src="assets/online.png">
+                                    <input id="payment-method-2" class="input-radio" type="radio" value="ONLINE"
+                                        name="payment_method"  (change)="enableONLINE($event.target)">
+                                   Pay Online </label>
+                                </div>
+                            </div>
+                            <div class="additional-info-wrap">
+                                <label>Order notes</label>
+                                <textarea placeholder="Enter Notes about your order or Cooking Instruction"
+                                    name="description" (change)="OrderNote($event)"></textarea>
+                            </div>
+
+                            <div class="checkout-forms mt-5">
+
+                                <h5> Delivery Address</h5>
+                                <div id="accordion">
+            
+
+                                    <div class="card-body_ mt-2 row">
+                                        <div class="Old_address col-lg-6 col-12" id="old_address" *ngFor="let a of addressFind">
+                                            <div class="address-box" >
+                                                <h5>{{a.name}}</h5>
+                                                <p>
+                                                    Mobile: 
+                                                    {{a.phone}}<br>
+                                                    {{a.address}}
+                                                </p>
+                                                <a href="javascript:void(0)" class="btn-fill address" (click)="setAddress(a)"  [class]="a.selected === true?'disbale':''">{{a.selected?'selected':'Deliver here'}}</a>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+            
+            
+                                    <div class="card">
+            <div class="card-body pl-0 pr-0" *ngIf="newAddress">
+                <h4>Add New Address</h4>
+                <form [formGroup]="CustomerForm" (ngSubmit)="getValue()">
+                    <div class="billing-info-wrap mr-50">
+            
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="billing-info mb-20">
+                                    <label>First Name <abbr class="required" title="required">*</abbr></label>
+                                    <input type="text" formControlName="name" required="true">
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="billing-info mb-20">
+                                    <label>Phone <abbr class="required" title="required">*</abbr></label>
+                                    <input type="tel" formControlName="phone" required="true" readonly>
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="billing-info mb-20">
+                                    <label>Email Address <abbr class="required" title="required">*</abbr></label>
+                                    <input type="email" formControlName="email" required="true">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-12">
+                                <div class="billing-info mb-2 ">
+                                    <label>Street Address <abbr class="required" title="required">*</abbr></label>
+                                    <input class="billing-address mb-2" placeholder="House number and street name" type="text"
+                                        formControlName="address" required="true">
+            
+                                </div>
+                            </div>
+            
+            
+            
+                            <div class="col-lg-6 col-md-6 col-12 pt-2">
+                                <button class="btn-fill btn-block" type="submit" [disabled]="!CustomerForm.valid">Add
+                                    Address</button>
+                            </div>
+            
+            
+                        </div>
+            
+            
+                    </div>
+                </form>
+            </div>
+            
+            
+            
+            
+                                        <div class="card-header_">
+                                            <!-- <button type="button" class="btn-outline " data-toggle="modal" data-target="#myModal">
+                                                Add Address
+                                            </button> -->
+       
+                                            <button type="button" class="btn-outline " (click)="newAddress=true" *ngIf="!newAddress">
+                                                Add Address
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="Place-order mt-3">
+
+                                <!-- <button class="btn-fill " id="place_order" (click)="payUButton2()" >payUButton testing</button> -->
+
+                                <button class="btn-fill " id="place_order" (click)="saveOrder_to_pos()" >Place Order</button>
+                            </div>
+    
+                            
+                            <div class="alert alert-warning alert-dismissible mt-3" *ngIf="DeliveryOff">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Sorry!</strong> Delivery Services Only Available on Less Then 15 KM Area From Our Store.
+                              </div>
+                              
+    
+                              <div class="alert alert-warning alert-dismissible mt-3" *ngIf="paymentSelctError">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                               {{paymentSelctError}}
+                              </div>
+                              <div class="alert alert-warning alert-dismissible mt-3" *ngIf="addressAlrt==true">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                               Address Not Selecetd! Please Select Address first
+                              </div>
+                            <div class="msg mt-5" *ngIf="msg" [innerHTML]="msg">
+                                <!-- {{msg}} -->
+    
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<div class="modal address_modal " id="myModal" aria-modal="false" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="border: 3px dashed #F0BDBE;">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Billing Details</h4>
+                <button type="button" class="close" data-dismiss="modal" id="close_">×</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+
+                <div class="card-body">
+                    <form [formGroup]="CustomerForm" (ngSubmit)="getValue()">
+                        <div class="billing-info-wrap mr-50">
+                
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="billing-info mb-20">
+                                        <label>First Name <abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" formControlName="name" required="true">
+                                    </div>
+                                </div>
+                
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="billing-info mb-20">
+                                        <label>Phone <abbr class="required" title="required">*</abbr></label>
+                                        <input type="tel" formControlName="phone" required="true">
+                                    </div>
+                                </div>
+                
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <div class="billing-info mb-20">
+                                        <label>Email Address <abbr class="required" title="required">*</abbr></label>
+                                        <input type="email" formControlName="email" required="true">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-12">
+                                    <div class="billing-info mb-2 ">
+                                        <label>Street Address <abbr class="required" title="required">*</abbr></label>
+                                        <input class="billing-address mb-2" placeholder="House number and street name" type="text"
+                                            formControlName="address" required="true">
+                
+                                    </div>
+                                </div>
+                
+                
+                
+                                <div class="col-lg-6 col-md-6 col-12 pt-2">
+                                    <button class="btn-fill btn-block" type="submit" [disabled]="!CustomerForm.valid">Add
+                                        Address</button>
+                                </div>
+                
+                
+                            </div>
+                
+                
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

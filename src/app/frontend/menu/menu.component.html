@@ -1,0 +1,563 @@
+<style>
+  .add_on {
+    color: #573676;
+}
+  @media (max-width: 767px) {
+    .variation ul li {
+      display: inline-flex;
+      margin-right: 10px !important;
+      padding: 0px 4px !important;
+      font-size: 12px !important;
+    }
+  }
+  .variation ul li {
+    display: inline-flex;
+    margin-right: 20px;
+    place-content: space-between;
+    border: 1px solid #573676;
+    padding: 0px 10px;
+    cursor: pointer;
+  }
+  .variation h6 {
+    font-size: 16px;
+    font-family: "Rubik", sans-serif;
+    padding-bottom: 6px;
+  }
+  .variation {
+    padding-bottom: 10px;
+  }
+</style>
+
+<style>
+  .addonlist li {
+    display: inline-flex;
+    place-items: center;
+    background: #ebebeb;
+    padding: 7px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  ul.addonlist li input {
+    width: 70px;
+  }
+  ul.addonlist li button {
+    padding: 12px 15px;
+    background: #573676;
+  }
+
+  ul.addonlist li .itnam {
+    min-width: 65%;
+  }
+  .add-on {
+    /* background: #f3f3f3;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    padding: 15px 15px;
+    margin-top: 10px; */
+  }
+
+  .mat-expansion-panel {
+    background: #ffffff;
+  }
+  .mat-expansion-panel-header-title {
+    color: black;
+  }
+  .mat-expansion-panel-header-description {
+    flex-grow: 0;
+    color: rgb(0 0 0 / 70%);
+  }
+  /* ._collapse {
+                                    display: none;
+                                } */
+</style>
+
+<style>
+  @media (max-width: 1024px) {
+    .page_header {
+      display: none;
+    }
+  }
+
+  .overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgb(223 223 223 / 80%);
+    z-index: 8;
+    top: 0;
+  }
+</style>
+<div class="overlay" *ngIf="modalShow" (click)="closeAddOn()"></div>
+<div
+  class="page_header"
+  style="background-image: url(assets/slider_1.jpg)"
+></div>
+<section class="menu_section_page pt-70">
+  <div class="container">
+    <div class="row mb-0 pb-3">
+      <div class="col-12 col-lg-6 col-md-6">
+        <div class="heading">
+          <h2>Order Online</h2>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-6 col-md-6">
+        <div class="heading hide_mobile">
+          <p>
+            Each location has a menu that's curated just for them. See what's
+            new on the menu at your Bonn Adda.
+          </p>
+        </div>
+        <a href="javascript:void(0)" class="filter" (click)="mobileFilter()">
+          Browse Menu <i class="las la-utensils"></i>
+        </a>
+      </div>
+
+      <div class="col-12" id="top">
+        <div class="form_group_inline">
+          <input
+            type="text"
+            placeholder="Search Items..."
+            class="input_search"
+            #search
+            (keyup)="searchKey(search.value)"
+          />
+          <!-- <button class="search_btn" (click)="searchKey(search.value)"><i class="las la-search"></i></button> -->
+        </div>
+      </div>
+    </div>
+    <style>
+      .alert {
+        position: relative;
+        padding: 6px;
+        margin-bottom: 1rem;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+        font-size: 12px;
+      }
+      .form-check {
+        padding-left: 40px;
+        margin: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #f3f3f3;
+      }
+      .card-body ul li:nth-last-child(1) .form-check {
+        border-bottom: 0px solid #f3f3f3;
+      }
+    </style>
+
+    <div class="row pb-3">
+      <div
+        class="col-12 col-lg-3 col-md-3 left_content_bar"
+        [ngClass]="leftBar ? 'open' : ''"
+      >
+        <span class="close_filter" (click)="mobileFilter()"
+          ><i class="las la-times"></i
+        ></span>
+        <div class="sidebar_menu">
+          <div class="card mb-3">
+            <div class="card-header">
+              <a
+                class="card-link"
+                data-toggle="collapse"
+                href="#cate00"
+                aria-expanded="true"
+              >
+                Type <span><i class="las la-angle-down"></i></span>
+              </a>
+            </div>
+
+            <div id="cate00" class="collapse show" data-parent="#accordion">
+              <div class="card-body">
+                <ul>
+                  <li *ngFor="let a of attributes">
+                    <div class="form-check custom-checkbox">
+                      <label
+                        class="form-check-label"
+                        for="customCheck{{ a.attributeid }}"
+                      >
+                        <input
+                          type="radio"
+                          class="form-check-input type_filter"
+                          id="customCheck{{ a.attributeid }}"
+                          name="example1"
+                          value="{{ a.attributeid }}"
+                          (change)="filterByAttribute(a.attributeid)"
+                        />
+                        {{ a.attribute }}
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h5 class="mb-3">Categories</h5>
+          <div id="accordion">
+            <!-- <div class="card">
+                            <div class="card-body">
+                                <ul>
+                                    <li *ngFor="let c of categories">
+                                        <a href="javascript:void(0)" class="category" (click)="filterByCategory(c.categoryid)" >
+                                            {{c.categoryname}} 
+                                       
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                       
+                        </div> -->
+
+            <div class="card" *ngFor="let p of singleCategories; index as i">
+              <div class="card-header">
+                <a
+                  class="card-link collapsed"
+                  data-toggle="collapse"
+                  href="#cate{{ i }}"
+                  aria-expanded="false"
+                  (click)="filterByCategory(p.categoryid)"
+                >
+                  {{ p.categoryname }}
+                </a>
+              </div>
+              <!-- <div id="cate{{i}}" class="collapse" data-parent="#accordion" >
+                                <div class="card-body">
+                                    <ul>
+
+                                        <li *ngFor="let c of newCats">
+                                            <a href="javascript:void(0)" class="category" (click)="filterByCategory(c.categoryid)" >
+                                                {{c.categoryname}} 
+                                         
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                </div> -->
+            </div>
+            <div class="card" *ngFor="let p of parentcategories; index as i">
+              <div class="card-header">
+                <a
+                  class="card-link collapsed"
+                  data-toggle="collapse"
+                  href="#cate{{ i }}"
+                  aria-expanded="false"
+                  (click)="getIdCat(p.id)"
+                >
+                  {{ p.name }} <span><i class="las la-angle-down"></i></span>
+                </a>
+              </div>
+              <div id="cate{{ i }}" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                  <ul>
+                    <li *ngFor="let c of newCats">
+                      <a
+                        href="javascript:void(0)"
+                        class="category"
+                        (click)="filterByCategory(c.categoryid)"
+                      >
+                        {{ c.categoryname }}
+                        <!-- <span class="items-count">0</span> -->
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9 col-md-9 col-12 right_content">
+        <div class="loader" *ngIf="loader">
+          <img src="assets/loader7.gif" />
+        </div>
+
+        <div class="notFound" *ngIf="notFound">
+          <img src="assets/no-product-found.png" class="img-fluid" />
+        </div>
+        <div class="row" id="product" *ngIf="!loader">
+          <div
+            class="col-12 col-lg-12 col-md-12 type_1 product333"
+            *ngFor="let item of items"
+          >
+            <div class="item-box">
+              <div class="food-img">
+                <img src="{{ item.item_image_url }}" class="img-fluid" />
+                <span class="veg" *ngIf="item.item_attributeid == 1"
+                  ><span class="m_hide">Veg</span> <span class="sign"></span
+                ></span>
+                <span class="non-veg" *ngIf="item.item_attributeid == 2"
+                  ><span class="m_hide">NON VEG</span> <span class="sign"></span
+                ></span>
+                <span class="egg" *ngIf="item.item_attributeid == 24"
+                  ><span class="m_hide">EGG</span> <span class="sign"></span
+                ></span>
+              </div>
+              <div class="item_detail">
+                <h5>{{ item.itemname }}</h5>
+
+                <div *ngIf="item.itemallowvariation == '1'">
+                  <div class="variation">
+                    <h6>{{ item.variation_groupname }}</h6>
+                    <ul>
+                      <li
+                        *ngFor="let ver of item.variation"
+                        (click)="getVariation(item, ver)"
+                      >
+                        <span> {{ ver.name }}</span> &nbsp;
+
+                        <span> {{ ver.price | currency : "INR" }}</span>
+                      
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="price" >{{ item.price | currency : "INR" }}</div>
+                <!-- <div class="price" *ngIf="item.price > 0 "> Discount Price  :{{  item.price -item.item_discount  | currency : "INR" }}</div> -->
+    
+                <!-- <button type="button" *ngIf="item.enable_addon === true" class="btn btn-primary" data-toggle="modal"
+                  data-target="#myModal" (click)="viewAdd(item.addon)">
+                  Open modal
+                </button> -->
+                
+                
+                <div  *ngIf=" id === item.itemid" >
+                  <div class="_collapse">
+                  
+                  
+                    <div class="add-on" >
+                  
+                      <h5>Add-On</h5>
+                  
+                      <span *ngFor="let addonItem of item.addon">
+                        <h4>{{ addonItem.name }}</h4>
+                        <ul class="addonlist">
+                          <li *ngFor="
+                                              let addonItem2 of addonItem.addongroupitems
+                                                .addongroupitems
+                                            ">
+                            <div class="itnam">
+                              {{ addonItem2.addonitem_name }} 
+                              <br />
+                              {{ addonItem2.addonitem_price | currency : "INR" }}
+                              <!-- {{addonItem2.in_stock}} -->
+                            </div>
+                            <input  type="number" #quantity value="0" (change)="
+                                                getQty(
+                                                  $event,
+                                                  item,
+                                                  addonItem2.addonitemid,
+                                                  addonItem.addon_group_id,
+                                                  quantity.value,
+                                                  addonItem2.addonitem_price,
+                                                  addonItem2.addonitem_name,
+                                                  addonItem.name
+                                                )
+                                              " />
+                  
+                            <button (click)="add_addOn(item)">
+                              <i class="las la-plus"></i>
+                            </button>
+                          </li>
+                        </ul>
+                      </span>
+                    </div>
+
+                        <div class="action">
+                          <div class="add" id="pp_58">
+                            <div *ngIf="openStatus">
+                              <div [ngSwitch]="item.in_stock" class="mt-2">
+                                <div *ngSwitchCase="0" class="status_">
+                                  <span class="badge badge-danger">Out Of Stock</span>
+                                </div>
+                        
+                                <div *ngSwitchDefault>
+                                  <button (click)="add_cart(item)" *ngIf="!item.iscart">
+                                    Add <i class="las la-plus"></i>
+                                  </button>
+                                </div>
+                              </div>
+                        
+                              <button *ngIf="item.iscart ">Already in cart</button>
+                            </div>
+                        
+                            <div class="msg" *ngIf="!openStatus">
+                              <div class="alert alert-primary">
+                                <strong>Store Closed </strong> <br /><span>Reason : {{ resturentStatus.reason }} <br />Open:
+                                  {{ resturentStatus.turn_on_time }}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+
+
+
+        
+                
+            
+                <div class="action">
+                  <div class="add mt-4" >
+                    <a href="javascript:void(0)" class="add_on" id="{{item.itemid}}" (click)="expand(item.itemid)"
+                      *ngIf="item.enable_addon === true">Add-On <i class="las la-plus"></i></a>
+                    <div *ngIf="openStatus">
+                      <div [ngSwitch]="item.in_stock" class="mt-0">
+                        <div *ngSwitchCase="0" class="status_">
+                          <span class="badge badge-danger">Out Of Stock</span>
+                        </div>
+
+                        <div *ngSwitchDefault>
+                          <button (click)="add_cart(item)" *ngIf="!item.iscart">
+                            Add <i class="las la-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <button *ngIf="item.iscart ">Already in cart</button>
+                    </div>
+
+                    <div class="msg" *ngIf="!openStatus">
+                      <div class="alert alert-primary">
+                        <strong>Store Closed </strong> <br /><span
+                          >Reason : {{ resturentStatus.reason }} <br />Open:
+                          {{ resturentStatus.turn_on_time }}</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<style>
+  .action .add {
+    display: flex;
+    place-items: center;
+    place-content: space-between;
+    width: 100%;
+}
+._collapse {
+    position: fixed;
+    top: 30%;
+    z-index: 999;
+    left: 50%;
+    transform: translate(-50%, -51%);
+    width: 360px;
+    /* background: #f3f3f3; */
+    background: #f3f3f3;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    padding: 10px 10px;
+}
+
+  </style>
+<div id="cartfooter" *ngIf="cartShow">
+  <div class="cart_footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="cart__items" [ngClass]="CartOpened ? 'open' : ''">
+            <div class="cart_top">
+              <p>Your Order</p>
+
+              <div class="toggle_close_cart" (click)="cartToggle()">
+                <i class="las la-times"></i>
+              </div>
+            </div>
+
+            <div class="cart_list">
+              <ul id="cartitem">
+                <li *ngFor="let c of CartItemData; index as i">
+                  <div class="list_item">
+                    <span
+                      ><p>{{ c.name }} </p>
+                      <br />
+                      <p>{{ c.final_price | currency : "INR" }}</p>
+                    
+                    </span>
+
+                    <div class="cart_item-price d-flex">
+                      <div class="qty_inp show">
+                        <span class="minus" (click)="cartQtyDown(c)"
+                          ><i class="las la-minus"></i
+                        ></span>
+                        <input
+                          type="number"
+                          value="{{ c.quantity }}"
+                          class="qty___input"
+                          readonly=""
+                        />
+                        <span class="plus" (click)="cartQtyUpdate(c)"
+                          ><i class="las la-plus"></i
+                        ></span>
+                      </div>
+
+                      <a (click)="removeCartItem(c.id, i)" class="remove"
+                        ><i class="las la-trash"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <mat-accordion *ngIf="c.AddonItem.details.length">
+                    <mat-expansion-panel hideToggle>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title> Add Ons </mat-panel-title>
+                        <mat-panel-description>
+                          <!-- {{ c.addTotal | currency : "INR" }} -->
+          
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let d of c.AddonItem.details">
+                            <td>{{ d.name }}</td>
+                            <td>{{ d.quantity }}</td>
+                            <td>{{ d.price | currency : "INR" }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cart_bar">
+            <div class="cart_action_left">
+              <div class="cart_toggle" (click)="cartToggle()">
+                <i class="las la-angle-up"></i>
+              </div>
+              <h6>Your Order ({{ CartCount }})</h6>
+            </div>
+
+            <div class="cart_action_right">
+              <h6>Subtotal: {{ total | currency : "INR" }}</h6>
+
+              <a (click)="redirect()" class="btn-fill">Continue</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

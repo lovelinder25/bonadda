@@ -1,0 +1,199 @@
+<div class="page_header" style="background-image: url(assets/Contact-Page-banner-min.jpg)">
+<style>
+    .wrapper {
+        width: 100%;
+    }
+
+    .w-100 {
+        width: 100% !important;
+    }
+
+    .contact-wrap {
+        background: #f8f8f8;
+    }
+
+    .no-gutters>.col,
+    .no-gutters>[class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    #contactForm .form-control {
+        font-size: 16px;
+    }
+
+    .contactForm .form-control {
+        border: none;
+    }
+
+    .form-control {
+        height: 44px;
+        background: #fff;
+        color: rgba(0, 0, 0, .8);
+        font-size: 14px;
+        border-radius: 2px;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: none;
+    }
+
+    .contactForm .label {
+        color: #000;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .map iframe {
+        max-height: 589px;
+    }
+
+    .dbox .text {
+        width: 100%;
+    }
+
+    .dbox .icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #000000;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        color: white;
+        font-size: 24px;
+    }
+
+    .dbox.w-100.text-center {
+        background: #f8f8f8;
+        padding: 15px;
+        min-height: 160px;
+    }
+
+    .text a {
+        color: black;
+    }
+
+    .text span {
+        font-weight: 700;
+    }
+
+    .btn-primary2 {
+        background: #F0BDBE;
+        padding: 3px 20px;
+        font-size: 12px;
+        color: white !important;
+    }
+</style>
+</div>
+
+<section class="pt-70">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div class="row no-gutters mb-5">
+                        <div class="col-md-7">
+                            <div class="contact-wrap w-100 p-md-5 p-4">
+                                <div id="form-message-warning" class="mb-4"> </div>
+                                <h3 class="mb-4">Contact Us</h3>
+                                <!--
+<div id="form-message-success" class="mb-4">
+Your message was sent, thank you!
+</div>
+-->
+                                <form method="POST" id="contactForm"
+                                    action="#" name="contactForm"
+                                    class="contactForm" novalidate="novalidate">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="name">Full Name</label>
+                                                <input type="text" class="form-control" name="name" id="name"
+                                                    placeholder="Name" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="email">Email Address</label>
+                                                <input type="email" class="form-control" name="email" id="email"
+                                                    placeholder="Email" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="label" for="subject">Subject</label>
+                                                <input type="text" class="form-control" name="subject" id="subject"
+                                                    placeholder="Subject" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="label" for="#">Message</label>
+                                                <textarea name="message" class="form-control" id="message" cols="30"
+                                                    rows="4" placeholder="Message" required=""></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="submit" value="Send Message" class="btn btn-primary2">
+                                                <div class="submitting"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-5 d-flex align-items-stretch map">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3423.8058437834934!2d75.828786!3d30.892092!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x466f0db02485694c!2sBon%20Gateau%20Bakery%20and%20Cafe!5e0!3m2!1sen!2sin!4v1648117295524!5m2!1sen!2sin"
+                                width="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-12">
+                            <div class="dbox w-100 text-center">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="las la-map-marker-alt"></span>
+
+                                </div>
+                                <div class="text">
+                                    <p><span>Address:</span>SCF 27, 28 C-Block Market, Ranjit Avenue </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="dbox w-100 text-center">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="las la-phone"></span>
+
+                                </div>
+                                <div class="text">
+                                    <p><span>Phone:</span>
+                                        <a href="tel:09988301301">09988301301</a> <br>
+                                        <a href="tel:918427009665">918427009665</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="dbox w-100 text-center">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="las la-envelope"></span>
+
+                                </div>
+                                <div class="text">
+                                    <p><span>Email:</span> <a href="#">bongateaubakeryncafe@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>

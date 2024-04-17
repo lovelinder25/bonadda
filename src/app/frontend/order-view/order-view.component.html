@@ -1,0 +1,189 @@
+<div
+  class="page_header"
+  style="background-image: url(assets/slider_1.jpg)"
+></div>
+<style>
+  @media(max-width:1024px) {
+    .page_header {
+      display: none;
+    }
+  }
+</style>  
+<style>
+  .table .thead-light th {
+    color: #ffffff;
+    background-color: #573676;
+    border-color: #dee2e6;
+  }
+  .statue {
+    width: 100%;
+    place-content: space-between;
+    place-items: center;
+    padding-bottom: 10px;
+  }
+  .statue p {
+    font-size: 20px;
+  }
+  .myaccount-content {
+    border: 1px solid #eeeeee;
+    padding: 10px;
+  }
+  .myaccount-content h3 {
+    font-size: 20px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+  address {
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit;
+  }
+  .shipping_address_summ ul li {
+    display: flex;
+    place-content: space-between;
+    place-items: center;
+    padding: 10px;
+    border-top: 1px solid #e7e7e7;
+  }
+</style>
+<section class="checkout_page pt-70">
+  <div class="container">
+    <div class="myaccount-page-wrapper">
+      <div class="row">
+
+
+        <div class="col-12">
+          <div class="statue d-flex">
+            <h3>Orders View (Bon Gateau)</h3>
+            <p *ngFor="let order of my_orders">
+              <!-- {{order.minimum_delivery_time}}
+              {{order.minimum_prep_time}}
+              {{order.cancel_reason}}
+              {{order.rider_phone_number}} -->
+              <strong>Status</strong>:
+              <span [ngSwitch]="order.status">
+                <span *ngSwitchCase="-1" class="badge badge-danger">Cancelled</span>
+                <span *ngSwitchCase="1" class="badge badge-success">Accepted</span>
+                <span *ngSwitchCase="2" class="badge badge-success">Accepted</span>
+                <span *ngSwitchCase="3" class="badge badge-success">Accepted</span>
+                <span *ngSwitchCase="4" class="badge badge-warning">Dispatch</span>
+                <span *ngSwitchCase="5" class="badge badge-info">Food Ready</span>
+                <span *ngSwitchCase="10" class="badge badge-light">Delivered</span>
+   
+                <span *ngSwitchDefault class="badge badge-primary">Pending</span>
+                </span>
+            </p>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-lg-8">
+              <div class="myaccount-table table-responsive text-center">
+                <table class="table table-bordered">
+                  <thead class="thead-light">
+                    <tr>
+                      <th>Product Detail</th>
+                      <th>Price</th>
+                      <th>Ouantity</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let order of my_orders">
+                    <tr *ngFor="let items of order.order_items; index as i">
+                      <td>{{ items.name }} <br /></td>
+                      <td>{{ items.price | currency : "INR" }}</td>
+                      <td>{{ items.quantity }}</td>
+                      <td>{{ items.final_price | currency : "INR" }}</td>
+
+                      <!-- <td>
+  <tr *ngFor="let i of items.love; index as i2">
+    <td>{{ i.name }} <br /></td>
+    <td>{{ i.price | currency : "INR" }}</td>
+    <td>{{ i.quantity }}</td>
+  
+  
+  </tr>
+                      </td> -->
+                    </tr>
+               
+                   
+                  </tbody>
+             
+                </table>
+
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-4">
+              <div class="shipping_address">
+                <div class="myaccount-content">
+                  <h3>Shipping Address</h3>
+                  <address *ngFor="let user of my_orders">
+                    <p class="mb-2">
+                      <strong>{{ user.customer.name }}</strong>
+                    </p>
+                    <p class="mb-2"><strong>Mobile:</strong> {{ user.customer.phone }}</p>
+                    <p class="mb-2">
+                     <strong> Full Address</strong>: {{ user.customer.address }}
+                    </p>
+                  </address>
+                </div>
+              </div>
+
+              <div class="shipping_address_summ">
+                <div class="your-order-info order-subtotal">
+                  <ul>
+                    <li>
+                      Subtotal
+                      <span>{{subTotal | currency : "INR" }} </span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="your-order-info order-subtotal">
+                  <ul>
+                    <!-- <li *ngFor="let t of OrderTax">
+                      {{ t.taxname }} ({{ t.tax }}
+                      {{ t.taxtype == "1" ? "%" : "" }})
+                      <span id="sub-total">{{
+                        GST_in_INR | currency : "INR"
+                      }}</span>
+                    </li> -->
+                  </ul>
+                </div>
+                <div class="your-order-info order-subtotal">
+                  <ul>
+                    <li>
+                      Total Discount
+                      <span id="deliver">{{
+                        DiscountAmount | currency : "INR"
+                      }}</span>
+                    </li>
+                    <li>
+                      Delivery
+                      <span id="deliver">{{
+                        delivery_charges | currency : "INR"
+                      }}</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="your-order-info order-total">
+                  <ul>
+                    <li>
+                      <strong>Grand Total</strong>
+                      <span id="grand_ttl">
+                        <strong>{{
+                        GrandTotal | currency : "INR"
+                      }}</strong></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

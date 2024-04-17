@@ -1,0 +1,52 @@
+<div class="page_header" style="background-image: url(assets/slider_1.jpg)"></div>
+
+<div class="login-register-area pt-115 pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 ml-auto mr-auto">
+                <div class="login-register-wrapper">
+                    <div class="login-register-tab-list nav">
+                        <a class="active" href="javascript:void(0)">
+                            <h4> login </h4>
+                        </a>
+                  
+                    </div>
+
+                    <div id="lg1" class="tab-pane">
+                        <div class="login-form-container">
+
+                            <div class="login-register-form">
+
+<span *ngIf="otp">{{otp}}</span>
+
+                        <form [formGroup]="LoginForm" (ngSubmit)="getValue()" *ngIf="!otp">
+
+                                    <input type="number" name="user-number" placeholder="Phone Number" class="text_inp" formControlName="mobile">
+
+                                    <!-- <span *ngIf="!LoginForm.valid">hkjhkj</span> -->
+
+                                    <div class="button-box mt-3">
+                                        <button type="submit" [disabled]="!LoginForm.valid"  class="btn-fill">Send OTP</button>
+                                    </div>
+                                </form>
+
+
+                                <form [formGroup]="otpForm" (ngSubmit)="getValueOtp()" *ngIf="otp">
+                                
+                                    <input type="number" name="user-number" placeholder="enter Otp" class="text_inp" formControlName="otp">
+                                
+                              
+                                
+                                    <div class="button-box mt-3">
+                                        <button type="submit" [disabled]="!otpForm.valid"  class="btn-fill mr-3">Verify OTP</button>
+                                        <a routerLink="/login" class="btn-fill" (click)="otp=''">Resend</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

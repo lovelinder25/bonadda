@@ -1,0 +1,305 @@
+<!-- <div class="top_bar" >
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="top_address mobile_hide">
+                    <p>SCF 27, 28 C-Block Market, Ranjit Avenue </p>
+                </div>
+            </div>
+
+
+            <div class="col-12 col-lg-6">
+                <div class="top_address right">
+                    <ul>
+
+
+                        <li><a href="https://instagram.com/bongateau.asr?igshid=YmMyMTA2M2Y="><i
+                                    class="lab la-instagram"></i></a></li>
+                        <li><a href="javascript:void(0)" class="call"> <i class="las la-phone-volume"></i> &nbsp;<span
+                                    class="mobile_hide">09988301301</span></a></li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<style>
+    .heading {
+    padding-top: 30px !important;
+}
+.add-on {
+    display: none !important;
+}
+.navbar__ {
+min-height: 70px;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    border-bottom: 1px solid #bbbbbb;
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index:99999;
+}
+.logo {
+    width: 59px;
+    display: block;
+    position: absolute;
+    left: 0;
+    transform: translate(0%, -30px);
+}
+</style>
+
+<div class="navbar__">
+    <div class="container">
+        <div class="navbar_row">
+
+
+
+            <div class="logo">
+                <a routerLink="Home">
+
+                    <img src="assets/logo.png?v=243" class="logo_img img-fluid" alt="">
+                </a>
+            </div>
+
+
+
+       
+            <div class="outer_div">
+                <!-- <a href="#cart" class="cart">
+                    <i class="las la-shopping-bag"></i>
+                        </a> -->
+
+                <a href="javascript:void(0);" class="search_btn" (click)="redirect()">
+                    <i class="las la-user-circle"></i>
+                </a>
+
+                <!-- <div class="toggle" (click)="toggle()">
+                    <i class="las la-bars"></i>
+                </div> -->
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<footer class="main-footer">
+    <div class="container">
+
+
+        <div class="footer-content">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a href="#">
+                        <img src="assets/logo.png" class="logo_img img-fluid" alt="">
+                    </a>
+                </div>
+
+                <div class="col-12 contect_links mt-3">
+                    <ul>
+                        <li><a href="javascript:void(0)">09988301301</a></li>
+                        <li><a href="javascript:void(0)">918427009665</a></li>
+
+                        <li><a href="javascript:void(0)">bongateaubakeryncafe@gmail.com</a></li>
+
+                    </ul>
+
+
+                </div>
+
+
+                <div class="col-12">
+                    <div class="footer_nav">
+                        <ul>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#privacy">Privacy Policy</a></li>
+                            <li><a href="#terms">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="follow">
+                        <p>FOLLOW OUR LATEST NEWS AND UPDATES ABOUT OUR BAKERY AND RESTAURANT</p>
+
+                        <ul>
+                            <li><a href="https://instagram.com/bongateau.asr?igshid=YmMyMTA2M2Y="><i
+                                        class="lab la-instagram"></i></a></li>
+                        </ul>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bottom-footer">
+        <p>Copyright © 2024 Bon Gateau. All rights reserved. Powered by <a href="#"><img src="assets/250x57.png"></a>
+        </p>
+    </div>
+</footer>
+<style>
+    @media(max-width:1024px) {
+
+
+        .main-footer {
+            display: none !important;
+        }
+
+        .app-footer {
+            display: block !important;
+        }
+    }
+
+    .logo_img_mobile {
+        max-height: 55px;
+    }
+
+    .food-img.no-img {
+        min-width: 21px;
+        border-radius: 5px;
+    }
+
+    .app-logo {
+        width: 100%;
+    }
+
+    .address__ {
+        text-align: right;
+        font-size: 12px;
+        padding-right: 10px;
+        max-width: 200px;
+    }
+
+    /* .top_bar {
+    padding: 10px 0px;
+    width: 100%;
+    place-items: center;
+        display: flex;
+    place-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+} */
+</style>
+
+<style>
+    .app-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 0px;
+        z-index: 999;
+        background: #573676;
+        display: none;
+    }
+
+    .app-footer ul {
+        padding: 0px;
+        display: inline-flex;
+        list-style: none;
+        place-content: space-between;
+        width: 100%;
+    }
+
+    .app-footer ul li {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .app-footer ul li a {
+        color: white;
+        font-size: 14px;
+        display: block;
+        padding: 2px 10px;
+    }
+
+    .app-footer ul li a.active {
+        /* border-top: 4px solid white; */
+        color: white;
+        /* filter: drop-shadow(2px 4px 6px black); */
+        box-shadow: inset 4px 4px 19px rgb(0 0 0 / 20%);
+    }
+
+    .cart_footer {
+        bottom: 52px !important;
+    }
+
+    .footer-icon {
+        font-size: 26px;
+        line-height: 0;
+    }
+
+    .menu_section_page {
+        background: white !important;
+        padding-top: 100px;
+    }
+</style>
+
+<footer class="app-footer">
+    <ul>
+        <li>
+            <a routerLink="./Home">
+                <div class="footer-icon"><i class="las la-home"></i></div>
+                <span>Home</span>
+            </a>
+        </li>
+
+
+        <li>
+            <a routerLink="./Menu">
+                <div class="footer-icon"><i class="las la-concierge-bell"></i> </div> <span>Menu</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="./Book-table">
+                <div class="footer-icon"><i class="las la-umbrella-beach"></i> </div> <span>Table</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="./Account">
+                <div class="footer-icon"><i class="las la-user"></i> </div><span>Profile</span>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+<style>
+    .page_header {
+        display: none;
+    }
+
+    .top_bar {
+        padding: 0px 0px;
+    }
+
+    .app-logo {
+        width: 100%;
+        background: white;
+        padding: 4px;
+    }
+
+    /*
+    .top_bar {
+    background: #ffffff !important;
+    }
+*/
+</style>

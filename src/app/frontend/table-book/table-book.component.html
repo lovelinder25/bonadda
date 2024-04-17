@@ -1,0 +1,205 @@
+<div class="page_header" style="background-image: url(assets/Book-Table-banner-min.jpg)">
+
+</div>
+<style>
+    @media(max-width:1024px) {
+        .page_header {
+            display: none;
+        }
+    }
+</style>
+<section class="checkout_page pt-70">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-12 col-md-12 mx-auto">
+                <div class="checkout-forms">
+
+
+
+
+
+
+
+
+
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="card-link" data-toggle="collapse" href="#collapseTwo" aria-expanded="true">
+                                Reservation <span><i class="las la-angle-down"></i> </span>
+                            </a>
+                        </div>
+                        <div id="collapseTwo" class="collapse show" data-parent="#accordion" >
+                            <div class="card-body">
+                                <div class="billing-info-wrap mr-50">
+
+
+
+                                    <div class=" mt-2">
+
+
+                                    </div>
+
+
+                                    <h3>Book a Table</h3>
+
+                                    <div class="alert alert-warning alert-dismissible mt-3" *ngIf="message">
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                     {{message}}
+                                      </div>
+                              
+                                      
+                                    <form [formGroup]="tableForm" (ngSubmit)="booktable()">
+
+
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info mb-20">
+                                                    <label>Name <abbr class="required" title="required">*</abbr></label>
+                                                    <input type="text" name="fname" required="true"  formControlName="fname">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info mb-20">
+                                                    <label>Date of Booking <abbr class="required"
+                                                            title="required">*</abbr></label>
+                                                    <input type="date" formControlName="date" required="true" min="2023-09-23">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="billing-info mb-20">
+                                                    <label>Phone <abbr class="required"
+                                                            title="required">*</abbr></label>
+                                                    <input type="tel" formControlName="phone" required="true">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="billing-info mb-20">
+                                                    <label>Time of Booking <abbr class="required"
+                                                            title="required">*</abbr></label>
+                                                    <select formControlName="time" class="form-contro" aria-required="true"
+                                                        aria-invalid="false" required="">
+                                                        <option value="">---</option>
+
+
+                                                        <option value="02:00 pm">02:00 pm</option>
+                                                        <option value="02:30 pm">02:30 pm</option>
+                                                        <option value="03:00 pm">03:00 pm</option>
+                                                        <option value="03:30 pm">03:30 pm</option>
+                                                        <option value="04:00 pm">04:00 pm</option>
+                                                        <option value="04:30 pm">04:30 pm</option>
+                                                        <option value="05:00 pm">05:00 pm</option>
+                                                        <option value="05:30 pm">05:30 pm</option>
+                                                        <option value="06:00 pm">06:00 pm</option>
+                                                        <option value="06:30 pm">06:30 pm</option>
+                                                        <option value="07:00 pm">07:00 pm</option>
+                                                        <option value="07:30 pm">07:30 pm</option>
+                                                        <option value="08:00 pm">08:00 pm</option>
+                                                        <option value="08:30 pm">08:30 pm</option>
+                                                        <option value="09:00 pm">09:00 pm</option>
+                                                        <option value="09:30 pm">09:30 pm</option>
+                                                        <option value="10:00 pm">10:00 pm</option>
+                                                        <option value="10:30 pm">10:30 pm</option>
+                                                        <option value="11:00 pm">11:00 pm</option>
+                                                        <option value="11:30 pm">11:30 pm</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="billing-info mb-20">
+                                                    <label>Guest Number <abbr class="required"
+                                                            title="required">*</abbr></label>
+                                                    <select formControlName="guest" class="form-contro" aria-required="true"
+                                                        aria-invalid="false" id="guest" (change)="getPrice($event)">
+                                                        <option value="">---</option>
+                                                        <option value="1">1 People</option>
+                                                        <option value="2">2 People</option>
+                                                        <option value="3">3 People</option>
+                                                        <option value="4">4 People</option>
+                                                        <option value="5">5 People</option>
+                                                        <option value="6">6 People</option>
+                                                        <option value="7">7 People</option>
+                                                        <option value="8">8 People</option>
+                                                        <option value="9">9 People</option>
+                                                        <option value="10">10 People</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="billing-info mb-20">
+                                                    <label>Email Address <abbr class="required"
+                                                            title="required">*</abbr></label>
+                                                    <input type="email" formControlName="email" required="true">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="billing-info mb-20">
+                                                    <label>Advanced Deposite (Adjustable in Bill)<abbr class="required"
+                                                            title="required"></abbr></label>
+                                                    <input type="number" formControlName="perperson" required="true" value=""
+                                                        readonly="" id="person">
+                                                </div>
+                                            </div>
+                                            <div class=" col-12 col-lg-6 col-md-6 additional-info-wrap">
+                                                <label> Any Special Occasion <abbr class="required"
+                                                        title="required">*</abbr></label>
+                                                <select formControlName="occasion" class="form-contro" aria-required="true"
+                                                    aria-invalid="false">
+                                                    <option value="">---</option>
+                                                    <option value="Birthday">Birthday</option>
+                                                    <option value="Anniversary">Anniversary</option>
+                                                    <option value="Kitty Parties">Kitty Parties</option>
+
+                                                </select>
+                                            </div>
+
+
+                                            <!--                                    <textarea placeholder="Notes about your order, e.g. special notes for delivery. " name="message"></textarea>-->
+                                            <div class="col-12 mt-3">
+                                                <button type="submit" class="btn-fill" [disabled]="!tableForm.valid"> Book </button>
+                                            </div>
+
+
+                                            <div class="col-12 mt-3">
+                                                <p><b>Time slot:</b> If table is booked for 10:50 am. Waiting period
+                                                    should only be of 15 mins. After 15 mins booking will automatically
+                                                    be cancelled.
+                                                    Next available table will be allocated to you. Paid price will not
+                                                    be refunded. </p>
+                                            </div>
+
+
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+<style>
+button.btn-fill:disabled {
+    background: #9c87b1;
+    cursor: not-allowed;
+}
+
+</style>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</section>

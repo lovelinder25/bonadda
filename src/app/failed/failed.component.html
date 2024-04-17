@@ -1,0 +1,35 @@
+<!-- <div class="container">
+    <div class="row">
+<div [innerHTML]="msg" class="col-12 col-lg-4 mx-auto">
+
+    <button (click)="goto()"></button>
+</div>
+    </div>
+</div> -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-4 mx-auto msg">
+        
+            <img src="assets/payment-failed.png" class="img-fluid">
+            <div [innerHTML]="msg" >
+    
+            </div>
+            <button (click)="goto()" class="btn-fill mt-4">Try Again</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.msg {
+    text-align: center;
+    background: white;
+    padding: 20px 0px;
+    border: 2px solid #ebebeb;
+    border-radius: 5px;
+    margin: 40px 0px;
+}
+
+</style>
+

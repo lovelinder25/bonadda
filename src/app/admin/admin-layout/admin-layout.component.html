@@ -1,0 +1,74 @@
+<div class="header_menu" *ngIf="hideNav">
+    <nav class="navbar navbar-expand-md  navbar-blue">
+        <!-- Brand -->
+        <div class="container-fluid">
+            <div class="row ml-0 mr-0">
+                <a class="navbar-brand" href="javascript:void(0)">Admin</a>
+      
+                <!-- Toggler/collapsibe Button -->
+                <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"><i class="las la-bars"></i></span>
+                </a>
+              
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="./Restaurants">Restaurants </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="./Book-tables">Tables</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="javascript:void(0)" (click)="logout()">Logout</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+      
+
+      </nav>
+    </div>
+    <style>
+   @media(max-width:800px){
+    .header_menu .navbar .row{
+        width: 100%;
+    place-content: space-between;
+      }
+   }
+      .navbar-toggler-icon {
+    display: flex;
+    width: auto;height: auto;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
+    place-content: center;
+    place-items: center;
+    color: #573676;
+    font-size: 27px;
+}
+      .navbar-toggler {
+    padding: 0.25rem 0.45rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+.navbar-blue{
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+ background: #573676;;
+}
+ul.navbar-nav li a {
+    color: white;
+}
+.navbar-brand{
+    text-decoration: none;
+    color: white;
+}
+
+
+    </style>
+<router-outlet></router-outlet>

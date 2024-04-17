@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://qle1yy2ydc.execute-api.ap-southeast-1.amazonaws.com/V1/",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/":""
+    },
+    "changeOrigin":false,
+    "logLevel":"debug"
+  }
+}

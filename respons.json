@@ -1,0 +1,544 @@
+{
+    "success": "1",
+    "message": "Menu items are successfully listed.",
+    "restaurants": [
+        {
+            "restaurantid": "4515",
+            "active": "1",
+            "details": {
+                "menusharingcode": "okz15g4x",
+                "currency_html": "&#8377;",
+                "country": "India",
+                "images": [],
+                "restaurantname": "Kings Digital - Bon Gateau",
+                "address": "ahmedabad",
+                "contact": "1234567890",
+                "latitude": "1",
+                "longitude": "1",
+                "landmark": "",
+                "city": "Ahmedabad",
+                "state": "Gujarat",
+                "minimumorderamount": "0",
+                "minimumdeliverytime": "30 Minutes",
+                "deliverycharge": "0",
+                "deliveryhoursfrom1": "",
+                "deliveryhoursto1": "",
+                "deliveryhoursfrom2": "",
+                "deliveryhoursto2": "",
+                "calculatetaxonpacking": 0,
+                "calculatetaxondelivery": 0,
+                "dc_taxes_id": "",
+                "pc_taxes_id": "",
+                "packaging_applicable_on": "NONE",
+                "packaging_charge": "",
+                "packaging_charge_type": ""
+            }
+        }
+    ],
+    "ordertypes": [
+        {
+            "ordertypeid": 1,
+            "ordertype": "Delivery"
+        },
+        {
+            "ordertypeid": 2,
+            "ordertype": "Pick Up"
+        },
+        {
+            "ordertypeid": 3,
+            "ordertype": "Dine In"
+        }
+    ],
+    "categories": [],
+    "parentcategories": [],
+    "items": [],
+    "variations": [],
+    "addongroups": [],
+    "attributes": [
+        {
+            "attributeid": "1",
+            "attribute": "veg",
+            "active": "1"
+        },
+        {
+            "attributeid": "2",
+            "attribute": "non-veg",
+            "active": "1"
+        },
+        {
+            "attributeid": "3",
+            "attribute": "Beverage",
+            "active": "1"
+        },
+        {
+            "attributeid": "4",
+            "attribute": "spicy",
+            "active": "1"
+        },
+        {
+            "attributeid": "5",
+            "attribute": "other",
+            "active": "1"
+        },
+        {
+            "attributeid": "7",
+            "attribute": "seasonal",
+            "active": "1"
+        },
+        {
+            "attributeid": "10",
+            "attribute": "chef-special",
+            "active": "1"
+        },
+        {
+            "attributeid": "20",
+            "attribute": "Zomato treat item",
+            "active": "1"
+        },
+        {
+            "attributeid": "22",
+            "attribute": "meal",
+            "active": "1"
+        },
+        {
+            "attributeid": "23",
+            "attribute": "cake",
+            "active": "1"
+        },
+        {
+            "attributeid": "24",
+            "attribute": "egg",
+            "active": "1"
+        },
+        {
+            "attributeid": "40",
+            "attribute": "ss-dessert",
+            "active": "1"
+        },
+        {
+            "attributeid": "41",
+            "attribute": "ss-breakfast",
+            "active": "1"
+        },
+        {
+            "attributeid": "42",
+            "attribute": "ss-lunch",
+            "active": "1"
+        },
+        {
+            "attributeid": "43",
+            "attribute": "ss-dinner",
+            "active": "1"
+        },
+        {
+            "attributeid": "44",
+            "attribute": "ss-north-indian",
+            "active": "1"
+        },
+        {
+            "attributeid": "45",
+            "attribute": "ss-chinese",
+            "active": "1"
+        },
+        {
+            "attributeid": "46",
+            "attribute": "ss-snacks",
+            "active": "1"
+        },
+        {
+            "attributeid": "47",
+            "attribute": "South Indian",
+            "active": "1"
+        },
+        {
+            "attributeid": "48",
+            "attribute": "ss-pizza",
+            "active": "1"
+        },
+        {
+            "attributeid": "50",
+            "attribute": "ss-biryani",
+            "active": "1"
+        },
+        {
+            "attributeid": "53",
+            "attribute": "Party Order",
+            "active": "1"
+        },
+        {
+            "attributeid": "60",
+            "attribute": "New",
+            "active": "1"
+        },
+        {
+            "attributeid": "85",
+            "attribute": "life-extension-only",
+            "active": "1"
+        },
+        {
+            "attributeid": "86",
+            "attribute": "meals-for-one-and-life-extension",
+            "active": "1"
+        },
+        {
+            "attributeid": "500",
+            "attribute": "ss-late-night",
+            "active": "1"
+        },
+        {
+            "attributeid": "501",
+            "attribute": "restaurant-recommended",
+            "active": "1"
+        },
+        {
+            "attributeid": "502",
+            "attribute": "mrp-item",
+            "active": "1"
+        },
+        {
+            "attributeid": "503",
+            "attribute": "ss-asian",
+            "active": "1"
+        },
+        {
+            "attributeid": "504",
+            "attribute": "ss-healthy",
+            "active": "1"
+        },
+        {
+            "attributeid": "505",
+            "attribute": "ss-international",
+            "active": "1"
+        },
+        {
+            "attributeid": "506",
+            "attribute": "ss-others",
+            "active": "1"
+        },
+        {
+            "attributeid": "507",
+            "attribute": "ss-regional",
+            "active": "1"
+        },
+        {
+            "attributeid": "508",
+            "attribute": "ss-rolls-and-kebabs",
+            "active": "1"
+        },
+        {
+            "attributeid": "509",
+            "attribute": "ss-sandwiches-and-burgers",
+            "active": "1"
+        },
+        {
+            "attributeid": "510",
+            "attribute": "ss-seafood",
+            "active": "1"
+        },
+        {
+            "attributeid": "511",
+            "attribute": "ss-south-indian",
+            "active": "1"
+        },
+        {
+            "attributeid": "512",
+            "attribute": "ss-street-food",
+            "active": "1"
+        },
+        {
+            "attributeid": "513",
+            "attribute": "ss-with-beverage",
+            "active": "1"
+        },
+        {
+            "attributeid": "515",
+            "attribute": "new",
+            "active": "1"
+        },
+        {
+            "attributeid": "516",
+            "attribute": "swiggy-pop item",
+            "active": "1"
+        },
+        {
+            "attributeid": "517",
+            "attribute": "holi-special",
+            "active": "1"
+        },
+        {
+            "attributeid": "519",
+            "attribute": "vegan",
+            "active": "1"
+        },
+        {
+            "attributeid": "520",
+            "attribute": "home-style-meal",
+            "active": "1"
+        },
+        {
+            "attributeid": "521",
+            "attribute": "cake-flavor-chocolate",
+            "active": "1"
+        },
+        {
+            "attributeid": "522",
+            "attribute": "cake-flavor-black-forest",
+            "active": "1"
+        },
+        {
+            "attributeid": "523",
+            "attribute": "cake-flavor-vanilla",
+            "active": "1"
+        },
+        {
+            "attributeid": "524",
+            "attribute": "cake-flavor-fruit",
+            "active": "1"
+        },
+        {
+            "attributeid": "525",
+            "attribute": "cake-flavor-pineapple",
+            "active": "1"
+        },
+        {
+            "attributeid": "526",
+            "attribute": "cake-flavor-butterscotch",
+            "active": "1"
+        },
+        {
+            "attributeid": "527",
+            "attribute": "cake-flavor-red-velvet",
+            "active": "1"
+        },
+        {
+            "attributeid": "528",
+            "attribute": "cake-flavor-blueberry",
+            "active": "1"
+        },
+        {
+            "attributeid": "529",
+            "attribute": "cake-flavor-cheesecake",
+            "active": "1"
+        },
+        {
+            "attributeid": "530",
+            "attribute": "cake-flavor-strawberry",
+            "active": "1"
+        },
+        {
+            "attributeid": "531",
+            "attribute": "cake-flavor-cream",
+            "active": "1"
+        },
+        {
+            "attributeid": "532",
+            "attribute": "cake-flavor-mango",
+            "active": "1"
+        },
+        {
+            "attributeid": "533",
+            "attribute": "cake",
+            "active": "1"
+        },
+        {
+            "attributeid": "534",
+            "attribute": "anniversary-wedding-cake",
+            "active": "1"
+        },
+        {
+            "attributeid": "535",
+            "attribute": "tiered-cake",
+            "active": "1"
+        },
+        {
+            "attributeid": "536",
+            "attribute": "birthday-cake",
+            "active": "1"
+        },
+        {
+            "attributeid": "537",
+            "attribute": "kids-birthday-cake",
+            "active": "1"
+        },
+        {
+            "attributeid": "538",
+            "attribute": "gourmet-cake",
+            "active": "1"
+        },
+        {
+            "attributeid": "539",
+            "attribute": "premium-cake",
+            "active": "1"
+        },
+        {
+            "attributeid": "540",
+            "attribute": "beef",
+            "active": "1"
+        },
+        {
+            "attributeid": "541",
+            "attribute": "bull",
+            "active": "1"
+        },
+        {
+            "attributeid": "542",
+            "attribute": "camel",
+            "active": "1"
+        },
+        {
+            "attributeid": "543",
+            "attribute": "chicken",
+            "active": "1"
+        },
+        {
+            "attributeid": "544",
+            "attribute": "crab",
+            "active": "1"
+        },
+        {
+            "attributeid": "545",
+            "attribute": "deer",
+            "active": "1"
+        },
+        {
+            "attributeid": "546",
+            "attribute": "duck",
+            "active": "1"
+        },
+        {
+            "attributeid": "547",
+            "attribute": "fish",
+            "active": "1"
+        },
+        {
+            "attributeid": "548",
+            "attribute": "frog",
+            "active": "1"
+        },
+        {
+            "attributeid": "549",
+            "attribute": "goat",
+            "active": "1"
+        },
+        {
+            "attributeid": "550",
+            "attribute": "goose",
+            "active": "1"
+        },
+        {
+            "attributeid": "551",
+            "attribute": "lamb",
+            "active": "1"
+        },
+        {
+            "attributeid": "552",
+            "attribute": "lobster",
+            "active": "1"
+        },
+        {
+            "attributeid": "553",
+            "attribute": "mutton",
+            "active": "1"
+        },
+        {
+            "attributeid": "554",
+            "attribute": "octopus",
+            "active": "1"
+        },
+        {
+            "attributeid": "555",
+            "attribute": "pigeon",
+            "active": "1"
+        },
+        {
+            "attributeid": "556",
+            "attribute": "pork",
+            "active": "1"
+        },
+        {
+            "attributeid": "557",
+            "attribute": "prawn",
+            "active": "1"
+        },
+        {
+            "attributeid": "558",
+            "attribute": "quail",
+            "active": "1"
+        },
+        {
+            "attributeid": "559",
+            "attribute": "rabbit",
+            "active": "1"
+        },
+        {
+            "attributeid": "560",
+            "attribute": "shark",
+            "active": "1"
+        },
+        {
+            "attributeid": "561",
+            "attribute": "shellfish",
+            "active": "1"
+        },
+        {
+            "attributeid": "562",
+            "attribute": "shrimp",
+            "active": "1"
+        },
+        {
+            "attributeid": "563",
+            "attribute": "squid",
+            "active": "1"
+        },
+        {
+            "attributeid": "564",
+            "attribute": "turkey",
+            "active": "1"
+        },
+        {
+            "attributeid": "565",
+            "attribute": "veal",
+            "active": "1"
+        },
+        {
+            "attributeid": "566",
+            "attribute": "venison",
+            "active": "1"
+        },
+        {
+            "attributeid": "567",
+            "attribute": "Ham",
+            "active": "1"
+        },
+        {
+            "attributeid": "568",
+            "attribute": "bacon",
+            "active": "1"
+        },
+        {
+            "attributeid": "569",
+            "attribute": "goods",
+            "active": "1"
+        },
+        {
+            "attributeid": "570",
+            "attribute": "services",
+            "active": "1"
+        },
+        {
+            "attributeid": "571",
+            "attribute": "gluten-free",
+            "active": "1"
+        },
+        {
+            "attributeid": "572",
+            "attribute": "dairy -free",
+            "active": "1"
+        }
+    ],
+    "taxes": [],
+    "discounts": [],
+    "serverdatetime": "2023-10-09 10:37:51",
+    "db_version": "1.0",
+    "application_version": "4.0"
+}

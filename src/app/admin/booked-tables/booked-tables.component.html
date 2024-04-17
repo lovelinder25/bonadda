@@ -1,0 +1,129 @@
+
+<div class="container-fluid">
+  <div class="row">
+
+<div class="page-header">
+  <div class="title">
+    <h4>View All Booked Tables</h4>
+      <p>Select Branch First</p>
+  </div>
+</div>
+
+    <div class="col-lg-3 col-12">
+            <div class="form-group">
+              <label>Select Branch</label>
+              <select class="form-control" (change)="getBranchId($event)">
+                <option  value="">-- Select Branch -- </option>
+                <option *ngFor="let r of restaurants" value="{{r.restID}}">{{r.city}} - {{r.restID}}</option>
+              </select>  
+            
+            </div>
+    </div>
+    <div class="col-12">
+     
+
+      <mat-form-field>
+      
+          <div class="mat-elevation-z8">
+            <div class="table-responsive">
+            <table mat-table [dataSource]="dataSource" matSort>
+        
+              <ng-container matColumnDef="Sr">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Sr </th>
+                <td mat-cell *matCellDef="let row,  index as i;"> {{i+1}} </td>
+              </ng-container>
+        
+              <ng-container matColumnDef="Name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <td mat-cell *matCellDef="let row"> {{row.fname}} </td>
+              </ng-container>
+        
+              <ng-container matColumnDef="Time">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Time </th>
+                <td mat-cell *matCellDef="let row"> {{row.time}} </td>
+              </ng-container>
+        
+      
+              <ng-container matColumnDef="Date">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+                <td mat-cell *matCellDef="let row"> {{row.date}} </td>
+              </ng-container>
+      
+              <ng-container matColumnDef="Email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+              </ng-container>
+      
+              <ng-container matColumnDef="Phone">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+                <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="Guest">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Guest </th>
+                <td mat-cell *matCellDef="let row"> {{row.guest}} </td>
+              </ng-container>
+      
+              <ng-container matColumnDef="Occasion">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Occasion </th>
+                <td mat-cell *matCellDef="let row"> {{row.occasion}} </td>
+              </ng-container>
+      
+      
+              <ng-container matColumnDef="Total">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Total </th>
+                <td mat-cell *matCellDef="let row"> {{row.total | currency:'INR'}} </td>
+              </ng-container>
+          
+            
+              <ng-container matColumnDef="Status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                <td mat-cell *matCellDef="let row">
+                  <div [ngSwitch]="row.status" class="status__">
+                    <div *ngSwitchCase="'Cancel'" class="badge badge-danger">{{row.status}}</div>
+                    <div *ngSwitchCase="'Waiting'" class="badge badge-warning">{{row.status}}</div>
+                    <div *ngSwitchCase="'Confirm'" class="badge badge-success">{{row.status}}</div>
+                   
+                
+                    <div *ngSwitchDefault class="badge badge-primary">Pending</div>
+                </div>
+                </td>
+              </ng-container>
+        
+              <!-- <ng-container matColumnDef="Remark">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Remark </th>
+                <td mat-cell *matCellDef="let row"> {{row.remark}} </td>
+              </ng-container>
+       -->
+        
+              <ng-container matColumnDef="Action">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                <td mat-cell *matCellDef="let row">
+                  <div class="table_action from-group ">
+                    <select class="form-control" (change)="updateStatus($event,row.id, row.restID)">
+                      <option value="">Update Status</option>
+                      <option value="Cancel">Cancel</option>
+                      <option value="Waiting">Waiting</option>
+                      <option value="Confirm">Confirm</option>
+                    </select>
+                  </div>
+                
+                </td>
+              </ng-container>
+              
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          
+           
+            </table>
+          </div>
+            <mat-paginator   [hidePageSize]="hidePageSize"  [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []" [pageSize]="pageSize"></mat-paginator>
+          </div>
+          </mat-form-field>
+
+    </div>
+
+  </div>
+
+</div>
