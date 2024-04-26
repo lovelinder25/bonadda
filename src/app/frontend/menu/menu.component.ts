@@ -153,16 +153,16 @@ export class MenuComponent implements OnInit {
 
         if (item.quantity > 1) {
           this.CartItemData[i].quantity = item.quantity -= 1;
-          
-        // this.CartItemData[i].gst_total_tax_amount = this.CartItemData[i].quantity * this.CartItemData[i].gst_total_tax_amount
+
+          // this.CartItemData[i].gst_total_tax_amount = this.CartItemData[i].quantity * this.CartItemData[i].gst_total_tax_amount
 
           this.CartItemData[i].final_price = this.CartItemData[i].test_price * this.CartItemData[i].quantity; // - this.CartItemData[i].item_discount
 
-      //  this.CartItemData[i].gst_total_tax_amount = this.CartItemData[i].quantity * this.CartItemData[i].gst_total_tax_amount 
+          //  this.CartItemData[i].gst_total_tax_amount = this.CartItemData[i].quantity * this.CartItemData[i].gst_total_tax_amount 
 
         }
 
-       
+
       }
     }
 
@@ -216,7 +216,7 @@ export class MenuComponent implements OnInit {
     this.Api.getStoreStatus().subscribe((res: any) => {
       for (let s of res.body) {
         this.resturentStatus = JSON.parse(s.data);
-        // // // console.log(this.resturentStatus.reason);
+        console.log(this.resturentStatus.store_status);
         this.openStatus = this.resturentStatus.store_status;
       }
     });
@@ -461,7 +461,7 @@ export class MenuComponent implements OnInit {
         for (let element of res.items) {
 
           let numbersObject = element.item_tax
-          console.warn(element.item_tax)
+          // console.warn(element.item_tax)
 
           let numbersArray = numbersObject.split(',')
 
@@ -477,7 +477,7 @@ export class MenuComponent implements OnInit {
             );
 
             element.tax_detail.push(...tdetail)
-            console.log('this.taxesList', element.tax_detail)
+            // console.log('this.taxesList', element.tax_detail)
           }
 
 
@@ -632,7 +632,7 @@ export class MenuComponent implements OnInit {
           }
           // // // // console.log('restaurant',data.details.menusharingcode, this.resturentStatus.restID)
         }
-        // // // // console.log(res.restaurants)
+
 
         if (res) {
           this.loader = false;
